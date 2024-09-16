@@ -146,7 +146,7 @@ describe('User', () => {
                 tryCreate({ username: 'dupe1' }),
             ]);
             if (err) {
-                assert.strictEqual(err.message, '[[error:username-taken]]');
+                assert.strictEqual(err.message, '[[error:username-taken try username:test123]]');
             } else {
                 const userData = await User.getUsersFields([uid1, uid2], ['username']);
                 const userNames = userData.map(u => u.username);
